@@ -1,0 +1,50 @@
+﻿@model List<Calificacion>
+
+<h1>Calificaciones</h1>
+
+<p>
+    <a asp-action="Crear">Crear nueva calificación</a>
+</p>
+<table class="table table-light table-bordered">
+    <thead>
+        <tr>
+            <th>
+                <span>Proveedor</span>
+            </th>
+            <th>
+                <span>Usuario</span>
+            </th>
+            <th>
+                <span>Calificación</span>
+            </th>
+            <th>
+                <span>Servicio</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProveedorID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puntuacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentario)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

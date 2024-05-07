@@ -1,0 +1,53 @@
+﻿@model Servicio
+
+<h1>Editar</h1>
+
+<h4> Servicio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NivelDificultad" class="control-label"></label>
+                <input asp-for="NivelDificultad" class="form-control" />
+                <span asp-validation-for="NivelDificultad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuracionEstimada" class="control-label"></label>
+                <input asp-for="DuracionEstimada" class="form-control" />
+                <span asp-validation-for="DuracionEstimada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaDisponibilidad " class="control-label"></label>
+                <input asp-for="FechaDisponibilidad " class="form-control" />
+                <span asp-validation-for="FechaDisponibilidad " class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+

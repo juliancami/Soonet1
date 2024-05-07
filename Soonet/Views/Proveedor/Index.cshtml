@@ -1,0 +1,44 @@
+﻿@model List<ProveedorServicios>
+
+<h1>Proveedores de servicio</h1>
+
+<p>
+    <a asp-action="Crear">Crear nuevo proveedor</a>
+</p>
+<table class="table table-light table-bordered">
+    <thead>
+        <tr>
+            <th>
+                <span>Nombre</span>
+            </th>
+            <th>
+                <span>Especialidad</span>
+            </th>
+            <th>
+                <span>Experiencia (años)</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExperienciaEnAnios)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.ID">Editar</a> |
+                    <a asp-action="Detalles" asp-route-id="@item.ID">Detalles</a> |
+                    <a asp-action="Eliminar" asp-route-id="@item.ID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

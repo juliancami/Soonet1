@@ -1,0 +1,65 @@
+﻿@model List<Servicio>
+
+
+<h1>Servicio</h1>
+
+
+<p>
+    <a asp-action="Crear">Crear New</a>
+</p>
+<table class="table table-light table-bordered">
+    <thead>
+
+        <tr>
+            <th>
+                <span>Titulo</span>
+            </th>
+            <th>
+                <span>Descripción</span>
+            </th>
+            <th>
+                <span>Categoría</span>
+            </th>
+            <th>
+                <span>NivelDificultad)</span>
+            </th>
+            <th>
+                <span>DuraciónEstimada</span>
+            </th>
+            <th>
+                <span>FechaDisponibilidad</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ítem in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.Categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.NivelDificultad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.DuracionEstimada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => ítem.FechaDisponibilidad)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@ítem.Id">Editar</a> |
+                    <a asp-action="Detalles" asp-route-id="@ítem.Id">Detalles</a> |
+                    <a asp-action="Eliminar" asp-route-id="@ítem.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

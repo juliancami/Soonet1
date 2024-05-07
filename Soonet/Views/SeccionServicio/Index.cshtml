@@ -1,0 +1,56 @@
+﻿@model List<SeccionServicio>
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <span>ServicioID</span>
+            </th>
+            <th>
+                <span>Titulo</span>
+            </th>
+            <th>
+                <span>Contenido</span>
+            </th>
+            <th>
+                <span>Recursos</span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach (var ítem in Model)
+        {
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => ítem.ServicioID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => ítem.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => ítem.Contenido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => ítem.Recursos)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@ítem.ID">Editar</a> |
+                    <a asp-action="Detalles" asp-route-id="@ítem.ID">Detalles</a> |
+                    <a asp-action="Eliminar" asp-route-id="@ítem.ID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+

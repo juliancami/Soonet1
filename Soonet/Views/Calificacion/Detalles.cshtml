@@ -1,0 +1,38 @@
+﻿@model Calificacion
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Calificacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <span>Proveedor</span>
+        </dt>
+        <dd class="col-sm-10">
+            <span>@Model.ProveedorServicios.Nombre</span>
+        </dd>
+        <dt class="col-sm-2">
+            <span>Usuario</span>
+        </dt>
+        <dd class="col-sm-10">
+            <span>@Model.Usuario.Name @Model.Usuario.Surname</span>
+        </dd>
+        <dt class="col-sm-2">
+            <span>Calificación</span>
+        </dt>
+        <dd class="col-sm-10">
+            <span>@Model.Puntuacion</span>
+        </dd>
+        <dt class="col-sm-2">
+            <span>Comentario</span>
+        </dt>
+        <dd class="col-sm-10">
+            <span>@Model.Comentario</span>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Editar" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>
